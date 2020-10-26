@@ -1,7 +1,7 @@
 # NASA Astronomy Picture of the Day
 
-This is a simple downloader for the (https://apod.nasa.gov/)[NASA APOD
-website]
+This is a simple downloader for the [https://apod.nasa.gov/](NASA APOD
+website)
 
 You must install the `requests` plugin from pip to use this script:
 
