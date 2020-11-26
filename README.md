@@ -6,6 +6,11 @@ NASA on their [APOD](https://apod.nasa.gov/apod/astropix.html) site.
 You can also specify a specific image to download using the `--url`
 option.
 
+## Installation
+
+Git clone this repo to a local folder, then run `pip install -r
+requirements.txt` to install the dependencies.
+
 ## Usage
 
 ```
