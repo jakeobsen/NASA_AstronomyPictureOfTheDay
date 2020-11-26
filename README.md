@@ -8,7 +8,7 @@ option.
 
 ## Usage
 
-'''
+```
 usage: nasapicofday [-h] [--url [URL]] [output_dir]
 
 Download NASA Astronomy Picture of the Day
@@ -19,7 +19,7 @@ positional arguments:
 optional arguments:
   -h, --help              show this help message and exit
   --url [URL], -u [URL]   Custom URL to download from
-'''
+```
 
 ## Automatic update
 
