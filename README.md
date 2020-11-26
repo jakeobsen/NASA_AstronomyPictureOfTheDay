@@ -1,33 +1,41 @@
-# NASA Astronomy Picture of the Day
+# NASA Astronomy Picture of the Day downloader
 
-This is a simple downloader for the
-[NASA APOD website](https://apod.nasa.gov/)
+This is my NASA APOD downloader. It gets the last picture published by
+NASA on their [APOD](https://apod.nasa.gov/apod/astropix.html) site.
 
-You must install the `requests` plugin from pip to use this script:
+You can also specify a specific image to download using the `--url`
+option.
 
-`pip3 install --user requests`
+## Usage
 
-Then you can simply run:
+'''
+usage: nasapicofday [-h] [--url [URL]] [output_dir]
 
-`python3 main.py ~/Pictures/NASA/`
+Download NASA Astronomy Picture of the Day
 
-And the script will download the latest picture to `~/Pictures/NASA/`
-where it will create a structure based on the current year and month. And
-then the script will symlink the last image to `~/Pictures/NASA/latest`
-for your convenience.
+positional arguments:
+  output_dir              Output dir for download script.
 
-If you want the image to auto update, simple point your wallpaper manager
-to the `latest` file and setup the script to run on a scheduled base.
+optional arguments:
+  -h, --help              show this help message and exit
+  --url [URL], -u [URL]   Custom URL to download from
+'''
 
-You can also download older images by running:
+## Automatic update
 
-`python3 main.py ~/Pictures/NASA/ --url https://apod.nasa.gov/apod/ap201026.html`
+The script does some basic checking before udpating the images to ensure
+you don't download the same picture twice. So you can easily put this in a
+cronjob and have it run in the background.
 
-At this poin the script will attempt to download that page, figure out the
-data and then download the file accordingly.
+Just run `crontab -e` and add a line like this:
 
-Please enjoy these awesome anstronomy pictures!
+`1 0 * * * * /path/to/nasapicofday ~/Pictures/APOD`
 
-... oh and btw! some of the files are missing and sometimes NASA puts up
-videos. That is generally annoying. However the script should be able to
-handle those situations. If not then I will most likely fix the script :)
+Remember to update the actual path to the location you put in
+`nasapicofday`.
+
+When you've added it to cron or run it the first time, then simply point
+your desktop background manager to the latest file in the output directory
+and you'll get the latest picture as your wallpaper!
+
+Copyright (C) 2020 Morten Jakobsen
